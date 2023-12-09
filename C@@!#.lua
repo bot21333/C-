@@ -3522,7 +3522,7 @@ end
         Section = 1,
         default = false,
         corner = 5,
-        title = "Auto Kill Terrorshark ",
+        title = "Auto Kill Terrorshark",
         disabled = false,
         Group = nil, -- nil == no group
         callback = function(value) 
