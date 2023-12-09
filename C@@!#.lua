@@ -390,13 +390,13 @@ task.spawn(function()
         --[World 2]
         _G.AutoThirdSea or _G.AutoBartiloQuest or _G.Auto_Evo_Race_V2  or _G.AutoDarkCoat or _G.AutoSwanGlasses or
         _G.AutoTrueTriplKatana or _G.AutoRengoku or _G.AutoEctoplasm or
-        _G.AutoFactory or
+        _G.AutoFactory or _G.AutoKillPiranha or
         --[World 3]
         _G.AutoRainbowHaki or _G.AutoEliteHunter or _G.AutoCastleRaid or _G.AutoMusketeerHat or _G.AutoBuddySword or
         _G.AutoFarmBone or _G.SpawnBossHallow or _G.AutoKenHakiV2 or _G.AutoObservation  or _G.AutoGodHuman or _G.AutoCavander or
         _G.AutoCursedDualKatana or _G.AutoYamaSword or _G.AutoTushitaSword or _G.AutoSerpentBowor or
         _G.AutoDarkDagger or _G.AutoCakePrince or _G.AutoDoughV2 or _G.AutoHolyTorch or
-        _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or
+        _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or _G.AutoTerrorshark or
         Tushita_Quest2 or Tushita_Quest1 or
         _G.TeleporttoSeaBeast  or _G.TPTOBOAT or 
         Tushita_Quest2 or Tushita_Quest1 or AutoFarmMaterial or teleporttop or _G.AutoFarmChest or
@@ -457,13 +457,13 @@ task.spawn(function()
         --[World 2]
         _G.AutoThirdSea or _G.AutoBartiloQuest or _G.Auto_Evo_Race_V2 or _G.AutoDarkCoat or _G.AutoSwanGlasses or
         _G.AutoTrueTriplKatana or _G.AutoRengoku or _G.AutoEctoplasm or
-        _G.AutoFactory or
+        _G.AutoFactory or _G.AutoKillPiranha or
         --[World 3]
         _G.AutoRainbowHaki or _G.AutoEliteHunter or _G.AutoCastleRaid or _G.AutoMusketeerHat or _G.AutoBuddySword or
         _G.AutoFarmBone or _G.SpawnBossHallow or _G.AutoKenHakiV2 or _G.AutoObservation  or _G.AutoGodHuman or _G.AutoCavander or
         _G.AutoCursedDualKatana or _G.AutoYamaSword or _G.AutoTushitaSword or _G.AutoSerpentBowor or
         _G.AutoDarkDagger or _G.AutoCakePrince or _G.AutoDoughV2 or _G.AutoHolyTorch or
-        _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or
+        _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or _G.AutoTerrorshark or
         Tushita_Quest2 or Tushita_Quest1 or
         _G.TeleporttoSeaBeast  or
         _G.TPTOBOAT or 
@@ -506,13 +506,13 @@ task.spawn(function()
     --[World 2]
     _G.AutoThirdSea or _G.AutoBartiloQuest or _G.Auto_Evo_Race_V2 or _G.AutoDarkCoat or _G.AutoSwanGlasses or
     _G.AutoTrueTriplKatana or _G.AutoRengoku or _G.AutoEctoplasm or
-    _G.AutoFactory or
+    _G.AutoFactory or _G.AutoKillPiranha or
     --[World 3]
     _G.AutoRainbowHaki or _G.AutoEliteHunter or _G.AutoCastleRaid or _G.AutoMusketeerHat or _G.AutoBuddySword or
     _G.AutoFarmBone or _G.SpawnBossHallow or _G.AutoKenHakiV2 or _G.AutoObservation  or _G.AutoGodHuman or _G.AutoCavander or
     _G.AutoCursedDualKatana or _G.AutoYamaSword or _G.AutoTushitaSword or _G.AutoSerpentBowor or
     _G.AutoDarkDagger or _G.AutoCakePrince or _G.AutoDoughV2 or _G.AutoHolyTorch or
-    _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or
+    _G.AutoBuddySwords or _G.AutoFarmBossHallow or MobAura or YamaQuest2 or YamaQuest1 or Auto_Cursed_Dual_Katana or _G.AutoTerrorshark or
     Tushita_Quest2 or Tushita_Quest1 or
     _G.TeleporttoSeaBeast   or
     _G.TPTOBOAT or 
@@ -1457,11 +1457,11 @@ local Settings = window:addPage({
 
     Main_Section:addButton({
         Section = 1,
-        title = "Discord Link : https://discord.gg/3dPczSVKyq",
+        title = "Get Copy Discord Link : https://discord.gg/bDYS8u2tGd",
         disabled = false,
         corner = 5,
         callback = function() 
-            setclipboard("https://discord.gg/3dPczSVKyq")
+            setclipboard("https://discord.gg/bDYS8u2tGd")
         end
     })
 
@@ -3359,52 +3359,88 @@ end
             Section = 1,
             default = false,
             corner = 5,
-            title = "Auto Sea Event",
+            title = "Auto Get Boat",
             disabled = false,
             Group = nil, -- nil == no group
             callback = function(value) 
-                _G.AutoEvent = value
-                if value == false then
-                    task.wait()
-                    toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-                    task.wait()
-                end
-                    spawn(function() --Event Sea
-                        while task.wait() do
-                         pcall(function()
-                             if _G.AutoEvent then 
-                                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                         if string.find(v.Name, "Fish Crew Member") or string.find(v.Name, "Piranha") or string.find(v.Name,"Shark") or string.find(v.Name , "Terror") and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 500  then 
-                                          if v.Humanoid.Health > 0 then 
-                                             repeat task.wait()
-                                                 _G.FastType = "Normal"
-                                                 FastAttack = true
-                                                 if _G.AutoHaki then
-                                                     if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-                                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-                                                     end
-                                                 end
-                                                 if not game.Players.LocalPlayer.Character:FindFirstChild(_G.SelectWeapon) then
-                                                     task.wait()
-                                                     EquipWeapon(_G.SelectWeapon)
-                                                 end
-                                                 if not _G.FastAttack then
-                                                     game:GetService'VirtualUser':CaptureController()
-                                                     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-                                                 end
-                                                 v.HumanoidRootPart.Size = Vector3.new(100,100,100)
-                                                 v.HumanoidRootPart.Transparency = 1
-                                                 toTarget(v.HumanoidRootPart.CFrame * MethodFarm)
-                                                  until v.Humanoid.Health <= 0 or not  _G.AutoEvent  
+                _G.AutoBuyBoat = value
+            end
+        })
+
+                task.spawn(function()
+                    while wait() do
+                        pcall(function()
+                            if _G.AutoBuyBoat then
+                                if not game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") then
+                                    if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then 
+                                        if not game:GetService("Workspace").Boats:FindFirstChild("PirateBasic") then
+                                            if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
+                                                buyb = toTarget(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
+                                                if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                                    if buyb then buyb:Stop() end
+                                                    local args = {
+                                                        [1] = "BuyBoat",
+                                                        [2] = "PirateBrigade"
+                                                    }
+                        
+                                                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                                                end
+                                            elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
+                                                if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
+                                                    toTarget(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                                elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == true then
+                                                    repeat wait()
+                                                        if (game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                                            toTarget(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
+                                                        end
+                                                    until game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") or _G.AutoBuyBoat == false
+                                                end
+                                            end
+                                        elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
+                                            for is,vs in pairs(game:GetService("Workspace").Boats:GetChildren()) do
+                                                if vs.Name == "PirateBrigade" then
+                                                    if vs:FindFirstChild("VehicleSeat") then
+                                                        repeat wait()
+                                                            game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
+                                                            toTarget(vs.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                                        until not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") or _G.AutoBuyBoat == false
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
+                                        for iss,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
+                                            if v.Name == "PirateBrigade" then
+                                                if v:FindFirstChild("VehicleSeat") then
+                                                    repeat wait()
+                                                        game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
+                                                        toTarget(v.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                                    until not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") or _G.AutoBuyBoat == false
                                                 end
                                             end
                                         end
                                     end
-                                end)
+                                elseif game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") then  
+                                    for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
+                                        if v:FindFirstChild("HumanoidRootPart") then
+                                            repeat wait()
+                                                game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
+                                                toTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,500,0))
+                                                EquipAllWeapon()  
+                                                AutoSkill = true
+                                                AimBotSkillPosition = v.HumanoidRootPart
+                                                Skillaimbot = true
+                                            until not v:FindFirstChild("HumanoidRootPart") or _G.AutoBuyBoat == false
+                                            AutoSkill = false
+                                            Skillaimbot = false
+                                        end
+                                    end
+                                end
                             end
                         end)
                     end
-                })
+                end)
+            
 
     if not World1 and not World2 then
          Main_Section:addCheckbox({
@@ -3437,6 +3473,95 @@ end
             end
         })
     end
+
+    Main_Section:addCheckbox({
+        Section = 1,
+        default = false,
+        corner = 5,
+        title = "Auto Kill Piranha",
+        disabled = false,
+        Group = nil, -- nil == no group
+        callback = function(value) 
+            _G.AutoKillPiranha = value
+        end
+    })
+
+    spawn(function()
+        while wait() do
+            if  _G.AutoKillPiranha then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Piranha") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Piranha" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        Click()
+                                        toTarget(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                    until not  _G.farmpiranya or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                     
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Piranha") then
+                            toTarget(game:GetService("ReplicatedStorage"):FindFirstChild("Piranha").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        else  
+                        end
+                    end
+                end)
+            end
+        end
+     end)
+
+    Main_Section:addCheckbox({
+        Section = 1,
+        default = false,
+        corner = 5,
+        title = "Auto Kill Terrorshark ",
+        disabled = false,
+        Group = nil, -- nil == no group
+        callback = function(value) 
+            _G.AutoTerrorshark = value
+        end
+    })
+
+    spawn(function()
+        while wait() do
+            if _G.AutoTerrorshark then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Terrorshark") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Terrorshark" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        Click()
+                                        toTarget(v.HumanoidRootPart.CFrame * MethodFarm)
+                                    until not  _G.AutoTerrorshark or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                      
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Terrorshark") then
+                            toTarget(game:GetService("ReplicatedStorage"):FindFirstChild("Terrorshark").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        else
+                        end
+                    end
+                end)
+            end
+        end
+     end)
+
     if not World1 then
         Main_Section:addCheckbox({
             Section = 1,
@@ -3681,6 +3806,55 @@ Main_Section:addCheckbox({
             end)
         end,
     })
+
+    function LockMoon()
+        local Lighting = game:GetService("Lighting")
+        local Cam = game.Workspace.CurrentCamera
+        local CFNew, CFAng = CFrame.new, CFrame.Angles
+        local asin = math.asin
+        
+        local Camera = workspace.CurrentCamera
+        local Player = game.Players.LocalPlayer
+        local Character = Player.Character
+        local Root = Character:WaitForChild("HumanoidRootPart")
+        local Neck = Character:FindFirstChild("Neck", true)
+        local YOffset = Neck.C0.Y
+        game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.LockMoon then
+            game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
+        
+            local pos = Vector3.new(0, 0, 0)
+            local lookAt = Lighting:GetMoonDirection()
+            local cameraCFrame = CFrame.new(pos, lookAt)
+            workspace.CurrentCamera.CFrame = cameraCFrame
+            local CameraDirection = Root.CFrame:toObjectSpace(cameraCFrame).lookVector.unit
+            if Neck and Lock then
+                Neck.C0 = CFNew(0, YOffset, 0) * CFAng(0, -asin(CameraDirection.x), 0) * CFAng(asin(CameraDirection.y), 0, 0)
+            end
+        else
+            Cam.FieldOfView = 70
+        end
+        end)
+        end
+
+    Main_Section:addLabel({
+        Section = 1,
+        text = 'Race V4',
+        textsize = nil, -- auto
+        textxalignment = Enum.TextXAlignment.Left,
+        textyalignment = Enum.TextYAlignment.Center,
+    })
+
+    Main_Section:addLabel({
+        Section = 1,
+        text = 'Coming Soon',
+        textsize = nil, -- auto
+        textxalignment = Enum.TextXAlignment.Left,
+        textyalignment = Enum.TextYAlignment.Center,
+    })
+
+
+
 
 Item_Section:addLabel({
     Section = 1,
@@ -8920,11 +9094,117 @@ task.spawn(function()
 
             Stats_Section:addLabel({
                 Section = 1,
-                text = 'Combat',
+                text = 'Shop',
                 textsize = nil, -- auto
                 textxalignment = Enum.TextXAlignment.Left,
                 textyalignment = Enum.TextYAlignment.Center,  
             }) 
+
+            listShop =  {"Refund Stat [2,500F]","Reroll Race [3,000F]","Haki [25,00$]", "Geppo [10,000$]", "Soru [100,000$]", "KenHaki [750,000$]", "Black Leg [150,000$]", "Electro [500,000$]", "Fishman Karate [750,000$]", "Dragon Claw [1,500F]",
+            "Superhuman [3,000,000]", "Death Step [2,500,000/5,000F]", "Sharkman Karate [2,500,000/5,000F]", "Electric Claw [3,000,000/5,000F]", "Dragon Talon [3,000,000/5,000F]", "Godhuman [5,000,000/5,000F]", "SanguineArt [5,000,000/5,000F]", "Katana [1,000]",
+            "Cutlass [1,000]", "Duel Katana [12,000]", "Iron Mace [25,000]", "Pipe [100,000]", "Triple Katana [60,000]", "Dual-Headed Blade [400,000]", "Bisento [1,000,000]", "Soul Cane [750,000]", "Slingshot [5,000]", "Musket [8,000]", "Flintlock [10,500]", "Refined Flintlock [65,000]", "Cannon [100,000]", "Kabucha [1500F]",
+            "Black Cape [50,000]", "Toemo Ring [500,000]", "Swordsman Hat [150,000]"}
+
+            Stats_Section:addDropdown({
+                Section = 1,
+                title = "Select Shop List",
+                corner = 5,
+                List = listShop,
+                keybind = false,
+                multi = false,
+                callback = function(v) 
+                    _G.ListShopBuy = v
+                end
+            })
+
+            Stats_Section:addButton({
+                Section = 1,
+                title = "Buy On Select Shop",
+                disabled = false,
+                corner = 5,
+                callback = function() 
+                    if _G.ListShopBuy == "Refund Stat [2,500F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Refund", "1")
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Refund", "2")   
+                    elseif _G.ListShopBuy == "Reroll Race [3,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "1")
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Reroll", "2")
+                    elseif _G.ListShopBuy == "Haki [25,00$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Buso")
+                    elseif _G.ListShopBuy == "Geppo [10,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Geppo")
+                    elseif _G.ListShopBuy == "Soru [100,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki", "Soru")
+                    elseif _G.ListShopBuy == "KenHaki [750,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk", "Buy")
+                    elseif _G.ListShopBuy == "Black Leg [150,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
+                    elseif _G.ListShopBuy == "Electro [500,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
+                    elseif _G.ListShopBuy == "Fishman Karate [750,000$]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
+                    elseif _G.ListShopBuy == "Dragon Claw [1,500F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "1")
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "DragonClaw", "2")
+                    elseif _G.ListShopBuy == "Superhuman [3,000,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
+                    elseif _G.ListShopBuy == "Death Step [2,500,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
+                    elseif _G.ListShopBuy == "Sharkman Karate [2,500,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate", true)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+                    elseif _G.ListShopBuy == "Electric Claw [3,000,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw", true)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+                    elseif _G.ListShopBuy == "Dragon Talon [3,000,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon", true)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
+                    elseif _G.ListShopBuy == "Godhuman [5,000,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman", true)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
+                    elseif _G.ListShopBuy == "SanguineArt [5,000,000/5,000F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt", true)
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+                    elseif _G.ListShopBuy == "Katana [1,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Katana")
+                    elseif _G.ListShopBuy == "Cutlass [1,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Cutlass")
+                    elseif _G.ListShopBuy == "Duel Katana [12,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Duel Katana")
+                    elseif _G.ListShopBuy == "Iron Mace [25,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Iron Mace")
+                    elseif _G.ListShopBuy == "Pipe [100,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Pipe")
+                    elseif _G.ListShopBuy == "Triple Katana [60,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Triple Katana")
+                    elseif _G.ListShopBuy == "Dual-Headed Blade [400,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Dual-Headed Blade")
+                    elseif _G.ListShopBuy == "Bisento [1,000,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Bisento")
+                    elseif _G.ListShopBuy == "Soul Cane [750,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Soul Cane")
+                    elseif _G.ListShopBuy == "Slingshot [5,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Slingshot")
+                    elseif _G.ListShopBuy == "Musket [8,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Musket")
+                    elseif _G.ListShopBuy == "Flintlock [10,500]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Flintlock")
+                    elseif _G.ListShopBuy == "Refined Flintlock [65,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Refined Flintlock")
+                    elseif _G.ListShopBuy == "Cannon [100,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Cannon")
+                    elseif _G.ListShopBuy == "Kabucha [1500F]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Slingshot", "1")
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward", "Slingshot", "2")
+                    elseif _G.ListShopBuy == "Black Cape [50,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Black Cape")
+                    elseif _G.ListShopBuy == "Toemo Ring [500,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Tomoe Ring")
+                    elseif _G.ListShopBuy == "Swordsman Hat [150,000]" then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem", "Swordsman Hat")
+                    end
+                end,
+            })
 
             Teleport_Section:addLabel({
                 Section = 1,
