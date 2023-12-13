@@ -1669,9 +1669,9 @@ do
 							LayoutOrder = 1,
 							RichText = true,
 							TextColor3 = library.Settings.theme.TextColor,
-							Text = "<b>Welcome To <font color='" .. library.Functions.colorToHex(
+							Text = "<font color='" .. library.Functions.colorToHex(
 								library.Settings.theme.Accent
-							) .. "'> Zekrom Hub X </font>!</b>",
+							) .. "'> Zekrom Hub X </font>",
 							Visible = false,
 							MaxVisibleGraphemes = 1,
 							TextYAlignment = Enum.TextYAlignment.Top,
