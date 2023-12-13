@@ -2,14 +2,6 @@
 local player = game:GetService("Players").LocalPlayer
 local mouse = player:GetMouse()
 
-if debug.info(1, "l") ~= 1 then
-    game.Players.LocalPlayer:Kick("Safe")
-        while true do 
-	end
-else
-    ---handle----
-end
-
 pcall(game.HttpGet, game, setmetatable({}, {
     __tostring = function()
         print("Kick Player")
@@ -35,25 +27,6 @@ for i,v in pairs(functions) do
         return old(...)
     end)
 end
-
-local function CheckForSpy()
-    local core = game:GetService("CoreGui")
-    local keyword = "spy"
-    
-    for _, v in pairs(core:GetDescendants()) do
-        if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
-            if string.find(string.lower(v.Name), string.lower(keyword)) or string.find(string.lower(v.Text), string.lower(keyword)) then
-                       while true do end
-                end
-            end
-        end
-    end
-
-CheckForSpy()
-game:GetService("CoreGui").ChildAdded:Connect(function()
-CheckForSpy()
-end)
-
 
 -- Library variables
 local library = {
