@@ -1671,7 +1671,7 @@ do
 							TextColor3 = library.Settings.theme.TextColor,
 							Text = "<b>Welcome To <font color='" .. library.Functions.colorToHex(
 								library.Settings.theme.Accent
-							) .. "'>" .. player.DisplayName .. "</font>!</b>",
+							) .. "'> Zekrom Hub X </font>!</b>",
 							Visible = false,
 							MaxVisibleGraphemes = 1,
 							TextYAlignment = Enum.TextYAlignment.Top,
