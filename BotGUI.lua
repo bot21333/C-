@@ -2,10 +2,6 @@
 local player = game:GetService("Players").LocalPlayer
 local mouse = player:GetMouse()
 
-if game.CoreGui:FindFirstChild("ZekromMinimze") then
-    game.CoreGui:FindFirstChild("ZekromMinimze"):Destroy()
-end
-
 if debug.info(1, "l") ~= 1 then
     game.Players.LocalPlayer:Kick("Safe")
         while true do 
