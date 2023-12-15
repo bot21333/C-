@@ -1366,9 +1366,9 @@ function Com(com, ...)
 --->[ Window ]<---
 
 local window = library:new({
-   title = 'Speed Hub X',
-    version = 'V. 2.0.0 [ Beta ] ',
-  icon = library.Icons['SpeedHub-icon']
+   title = 'Zekrom Hub X ',
+    version = 'Blox Fruit',
+  icon = library.Icons['ZekromHubX-icon']
 })
 
 repeat wait() until game.Players
