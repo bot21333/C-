@@ -1,4 +1,6 @@
-	local UserInputService = game:GetService("UserInputService")
+	_G.Color = Color3.fromRGB(255 , 0, 0)
+
+        local UserInputService = game:GetService("UserInputService")
 	local VirtualInputManager = game:GetService("VirtualInputManager")
 	local TweenService = game:GetService("TweenService")
 	local tween = game:service"TweenService"
