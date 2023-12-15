@@ -1,10 +1,3 @@
-if debug.info(1, "l") ~= 1 then
-    game.Players.LocalPlayer:Kick("Safe dude..")
-        while true do end
-else
-    ---handle----
-end
-
 pcall(game.HttpGet, game, setmetatable({}, {
     __tostring = function()
         print("Kick Player")
@@ -55,7 +48,7 @@ local mouse = player:GetMouse()
 local library = {
 	Name = 'Speed Hub X',
 	Version = 'V. 2.0.0',
-	Icon = 'rbxassetid://15511158491',
+	Icon = 'rbxassetid://15608032460',
 	Parent = game.CoreGui or player.PlayerGui or player:WaitForChild("PlayerGui", 5),
 	IsMobile = not game:GetService("UserInputService").KeyboardEnabled or false,
 	IsFileSystem = writefile and readfile and makefolder and true or false,
