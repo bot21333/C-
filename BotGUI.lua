@@ -6,21 +6,6 @@ if game.CoreGui:FindFirstChild("ZekromMinimze") then
     game.CoreGui:FindFirstChild("ZekromMinimze"):Destroy()
 end
 
-if debug.info(1, "l") ~= 1 then
-    game.Players.LocalPlayer:Kick("Safe")
-        while true do 
-	end
-else
-    ---handle----
-end
-
-pcall(game.HttpGet, game, setmetatable({}, {
-    __tostring = function()
-        print("Kick Player")
-        return ""
-    end,
-}))
-
 local functions = {print,warn,error,writefile,makefolder,rconsoleprint,setclipboard,rconsoleerr,rconsolewarn}
 local hell_nah = {"githubusercontent","ahmadsgamer2" or "bot21333"}
 for i,v in pairs(functions) do
