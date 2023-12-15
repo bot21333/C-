@@ -27,24 +27,6 @@
 	ImageButton.MouseButton1Down:connect(function()
 		game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
 		game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-		local SoundClick = Instance.new("Sound")
-		SoundClick.Name = "SoundEffect"
-		SoundClick.SoundId = "rbxassetid://130785805"
-		SoundClick.Volume = 1
-		SoundClick.Parent = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
-		TweenService:Create(
-			ImageButton,
-			TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-			{Size = UDim2.new(0, 75, 0, 75)}
-		):Play()
-		SoundClick:Play()
-		wait(.2)
-		TweenService:Create(
-			ImageButton,
-			TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-			{Size = UDim2.new(0, 70, 0, 70)}
-		):Play()
-		SoundClick:Destroy()
 	end)
 	
 	UICorner.Parent = ImageButton
@@ -434,10 +416,7 @@
 		Main.Position = UDim2.new(0.5, 0, 0.5, 0)
 		Main.Size = UDim2.new(0, 300, 250, 0)
 		Main.ClipsDescendants = true
-		Main.AnchorPoint = Vector2.new(0.5, 0.5)
-	
-		Main:TweenSize(UDim2.new(0,300,0,250),"Out","Quad",0.5,false)
-		
+		Main.AnchorPoint = Vector2.new(0.5, 0.5)		
 	
 		local UICorner_59 = Instance.new("UICorner")
 		UICorner_59.CornerRadius = UDim.new(0, 5)
