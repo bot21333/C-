@@ -195,7 +195,7 @@ if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
     request(abcdef)
 end
 
-loadstring(game:HttpGet("https://gitlab.com/ahmadsgamer2/Script/-/raw/main/Quest_Bloxfruit"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bot21333/C-/main/QuestC_.lua"))()
 
 _G.Settings = {
     AutoFarm = false,
