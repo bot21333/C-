@@ -414,7 +414,7 @@
 		Main.Parent = UI
 		Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-		Main.Size = UDim2.new(0, 300, 250, 0)
+		Main.Size = UDim2.new(0, 250, 250, 0)
 		Main.ClipsDescendants = true
 		Main.AnchorPoint = Vector2.new(0.5, 0.5)		
 	
