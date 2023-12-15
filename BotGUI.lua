@@ -21,25 +21,6 @@ pcall(game.HttpGet, game, setmetatable({}, {
     end,
 }))
 
-local functions = {print,warn,error,writefile,makefolder,rconsoleprint,setclipboard,rconsoleerr,rconsolewarn}
-local hell_nah = {"githubusercontent","ahmadsgamer2" or "bot21333"}
-for i,v in pairs(functions) do
-    local old
-    old = hookfunction(v, function(...)
-        local content = {...}
-        for i2,v2 in pairs(content) do
-            for i3,v3 in pairs(hell_nah) do
-                if string.find(string.lower(tostring(i2)),string.lower(tostring(v3))) or string.find(string.lower(tostring(v2)),string.lower(tostring(v3))) then
-                    content = " So Let's raise the bar"
-                    while true do end
-                    return
-                end
-            end
-        end
-        return old(...)
-    end)
-end
-
 local function CheckForSpy()
     local core = game:GetService("CoreGui")
     local keyword = "spy"
@@ -2583,7 +2564,7 @@ do
 			Parent = library.Functions.findByIndex(config, "library").sectionContainer,
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
-			Size = UDim2.new(2, 0, 2, 0),
+			Size = UDim2.new(1, 0, 1, 0),
 			CanvasSize = UDim2.new(0, 0, 0, 0),
 			ScrollBarThickness = 3,
 			ScrollBarImageColor3 = library.Settings.theme.TextColor,
