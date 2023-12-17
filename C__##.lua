@@ -24,29 +24,12 @@ for i,v in pairs(functions) do
     end)
 end
 
-local function CheckForSpy()
-    local core = game:GetService("CoreGui")
-    local keyword = "spy"
-    
-    for _, v in pairs(core:GetDescendants()) do
-        if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
-            if string.find(string.lower(v.Name), string.lower(keyword)) or string.find(string.lower(v.Text), string.lower(keyword)) then
-                       while true do end
-                end
-            end
-        end
-end
-CheckForSpy()
-game:GetService("CoreGui").ChildAdded:Connect(function()
-CheckForSpy()
-end)
-
 -- game variables
 local player = game:GetService('Players').LocalPlayer
 local mouse = player:GetMouse()
 -- Library variables
 local library = {
-	Name = 'Speed Hub X',
+	Name = 'Zekrom Hub X',
 	Version = 'V. 2.0.0',
 	Icon = 'rbxassetid://15608032460',
 	Parent = game.CoreGui or player.PlayerGui or player:WaitForChild("PlayerGui", 5),
@@ -799,7 +782,7 @@ do
 		library.Settings.Elements_Size = math.max(ScreenGui.AbsoluteSize.Y * 0.025, 18)
 		library.Settings.Elements_TextSize = math.max(ScreenGui.AbsoluteSize.Y * 0.018, 8)
 
-        local MinSize = library.IsMobile and Vector2.new(220, 220) or Vector2.new(420, 220)
+        local MinSize = library.IsMobile and Vector2.new(280, 280) or Vector2.new(450, 250)
 		local UISize = library.IsMobile and UDim2.new(0, math.max((ScreenGui.AbsoluteSize.X + 1) / 3.4, MinSize.X), 0, math.max(ScreenGui.AbsoluteSize.Y / 2.8, MinSize.Y)) or UDim2.new(0, math.max((ScreenGui.AbsoluteSize.X + 1) / 2.8, MinSize.X), 0, math.max(ScreenGui.AbsoluteSize.Y / 2.8, MinSize.Y))
 
 		local show_icon = Create('ImageButton', {
