@@ -788,14 +788,14 @@ do
 		local show_icon = Create('ImageButton', {
 			Name = 'show_icon',
 			Parent = ScreenGui,
-			Size = UDim2.new(0, 59, 0, 49),
+			Size = UDim2.new(0, math.max(ScreenGui.AbsoluteSize.Y * 0.04, 30), 0, math.max(ScreenGui.AbsoluteSize.Y * 0.04, 30)),
 			Position = UDim2.new(0.5, 0, 0.05, 0),
 			AnchorPoint = Vector2.new(0.5, 0.05),
 			AutoButtonColor = false,
 			ImageTransparency = 1,
 			BackgroundTransparency = 1,
 			Image = library.Icon,
-			ImageColor3 = Color3.fromRGB(255,255,255)
+			ImageColor3 = library.Settings.theme.Accent
 		})
         local Frame = Create('Frame', {
             Parent = ScreenGui,
@@ -4223,6 +4223,6 @@ library.Icons = {
 	["Stats"] = "rbxassetid://11447069304",
 	["Teleport"] = "rbxassetid://6035190846",
 	["SpeedHub-icon"] = "rbxassetid://15511158491",
-    ["ZekromHubX-icon"] = "rbxassetid://15674672787",
+        ["ZekromHubX-icon"] = "rbxassetid://15608032460",
 }
 return library
