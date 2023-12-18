@@ -4223,6 +4223,6 @@ library.Icons = {
 	["Stats"] = "rbxassetid://11447069304",
 	["Teleport"] = "rbxassetid://6035190846",
 	["SpeedHub-icon"] = "rbxassetid://15511158491",
-        ["ZekromHubX-icon"] = "rbxassetid://15608032460",
+        ["ZekromHubX-icon"] = "rbxassetid://15674672787",
 }
 return library
