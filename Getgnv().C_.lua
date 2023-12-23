@@ -1509,7 +1509,11 @@ function UILIB.newTab(name, img)
 		newLabel.Parent = newTab
 		newLabel.Visible = true
 		newLabel.Title.Text = text
-
+	
+		function UpdateText:Set(UpdateText)
+			newLabel.Title.Text = UpdateText
+			return UpdateText
+		end
 		return newLabel.Title
 	end
 
@@ -1760,12 +1764,25 @@ function UILIB.newTab(name, img)
 				twPos:Play()
 				twPos.Completed:Wait()
 				newdd.Box.Visible = false
+
+				function Dropfunc:Clear()
+					for i, v in next, listTable:GetChildren() do
+					if v:IsA("TextButton") then
+					v:Destroy()
+					end
+					end
+					end
+					for i, v in next, list do
+					Dropfunc:Add(v)
+					end
+				return Dropfunc
 			end
 		end)
 	end
 
 	return self
 end
+
 return UILIB
 end;
 };
