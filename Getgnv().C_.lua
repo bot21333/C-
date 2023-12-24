@@ -1,3 +1,53 @@
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+game:GetService("VirtualUser"):Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+wait(1)
+game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+end)
+
+pcall(game.HttpGet, game, setmetatable({}, {
+    __tostring = function()
+        print("Kick Player")
+        return ""
+    end,
+}))
+ 
+local functions = {print,warn,error,writefile,makefolder,rconsoleprint,setclipboard,rconsoleerr,rconsolewarn}
+local hell_nah = {"githubusercontent","NOOB_SCRIPT20002"}
+for i,v in pairs(functions) do
+    local old
+    old = hookfunction(v, function(...)
+        local content = {...}
+        for i2,v2 in pairs(content) do
+            for i3,v3 in pairs(hell_nah) do
+                if string.find(string.lower(tostring(i2)),string.lower(tostring(v3))) or string.find(string.lower(tostring(v2)),string.lower(tostring(v3))) then
+                    content = " So Let's raise the bar"
+                    while true do end
+                    return
+                end
+            end
+        end
+        return old(...)
+    end)
+end
+ 
+local function CheckForSpy()
+    local core = game:GetService("CoreGui")
+    local keyword = "spy"
+ 
+    for _, v in pairs(core:GetDescendants()) do
+        if v:IsA("TextLabel") or v:IsA("TextButton") or v:IsA("TextBox") then
+            if string.find(string.lower(v.Name), string.lower(keyword)) or string.find(string.lower(v.Text), string.lower(keyword)) then
+                       while true do end
+                end
+            end
+        end
+end
+CheckForSpy()
+game:GetService("CoreGui").ChildAdded:Connect(function()
+CheckForSpy()
+end)
+
+
 -- Instances: 147 | Scripts: 0 | Modules: 1
 local SpeedHubX_V2 = {};
 
