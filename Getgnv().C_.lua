@@ -1559,13 +1559,11 @@ function UILIB.newTab(name, img)
 		newLabel.Parent = newTab
 		newLabel.Visible = true
 		newLabel.Title.Text = text
-	
-		function UpdateText:Set(UpdateText)
-			newLabel.Title.Text = UpdateText
-			return UpdateText
-		end
-		return newLabel.Title
-	end
+	 function self.SetLabel(UpdateText)
+			newLabel.Title.Text = UpdateText 
+	 end
+	return newLabel.Title
+end
 
 	function self.newInput(name, desc, func)
 		local newInput = reserved.Textbox:Clone()
@@ -1815,7 +1813,7 @@ function UILIB.newTab(name, img)
 				twPos.Completed:Wait()
 				newdd.Box.Visible = false
 
-				function Dropfunc:Clear()
+				function self.Clear()
 					for i, v in next, listTable:GetChildren() do
 					if v:IsA("TextButton") then
 					v:Destroy()
@@ -1823,10 +1821,9 @@ function UILIB.newTab(name, img)
 					end
 					end
 					for i, v in next, list do
-					Dropfunc:Add(v)
+						self.Add(v)
 					end
-				return Dropfunc
-			end
+			    end
 		end)
 	end
 
